@@ -1,10 +1,24 @@
 
 
-function alterarStatus() {
+function alterarStatus(valor) {
 
-    alterarStatusBotao('btngame1')
+  
 
-    //alert('Teste ok')
+    if(valor == 1){
+       alterarStatusBotao('btngame1')
+
+    }
+    else if (valor == 2){
+
+        alterarStatusBotao('btngame2')
+        
+
+    }
+    else if(valor ==3 ){
+        
+        alterarStatusBotao('btngame3')
+      
+    }
 }
 
 function alterarStatusBotao(btn) {
