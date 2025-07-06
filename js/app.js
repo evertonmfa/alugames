@@ -1,22 +1,22 @@
 
 
-function alterarStatus(valor) {
+function alterarStatus(id) {
 
   
 
-    if(valor == 1){
-       alterarStatusBotao('btngame1')
+    if(id == 1){
+       alterarStatusBotao(`game-${id}`)
 
     }
-    else if (valor == 2){
+    else if (id == 2){
 
-        alterarStatusBotao('btngame2')
+        alterarStatusBotao(`game-${id}`)
         
 
     }
-    else if(valor ==3 ){
+    else if(id ==3 ){
         
-        alterarStatusBotao('btngame3')
+        alterarStatusBotao(`game-${id}`)
       
     }
 }
@@ -24,17 +24,26 @@ function alterarStatus(valor) {
 function alterarStatusBotao(btn) {
 
 
-    let botao = document.getElementById(btn);
+    let gameClicado = document.getElementById(btn);
+    let imagem = gameClicado.querySelector('.dashboard__item__img');
+    let botao = gameClicado.querySelector('.dashboard__item__button');
+
+
     if (botao.classList.contains('dashboard__item__button--return')) {
 
         botao.classList.remove('dashboard__item__button--return');
         botao.textContent = 'Alugar';
+        imagem.classList.remove('dashboard__item__img--rented');
+        
 
     }
     else {
 
         botao.classList.add('dashboard__item__button--return')
         botao.textContent = 'Devolver';
+        imagem.classList.add('dashboard__item__img--rented')
+        
+
 
     }
 }
